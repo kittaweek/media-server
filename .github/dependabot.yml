@@ -1,6 +1,6 @@
 version: 2
 updates:
-  - package-ecosystem: "docker"
+  - package-ecosystem: "docker-compose"
     directory: "/"
     schedule:
       interval: "weekly"
@@ -9,7 +9,7 @@ updates:
       timezone: "Asia/Bangkok"
     open-pull-requests-limit: 5
     groups:
-      docker-minor-patch:
+      compose-minor-patch:
         update-types:
           - "minor"
           - "patch"
