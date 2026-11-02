@@ -15,7 +15,7 @@ Jellyfin media server ด้วย Docker Compose (รันบนเครื�
 
 ## หมายเหตุ
 - mount media drive แบบ read-only (`ro`)
-- image `jellyfin/jellyfin` ยังไม่ pin version → ควร pin เมื่อแก้ครั้งถัดไป
+- image pin `jellyfin/jellyfin:10.11.11` · Dependabot (docker-compose) เสนออัปเกรดทุกวันจันทร์ · อัปเกรด Jellyfin ควรสำรอง `PATH_CONFIG` ก่อน
 
 ## กฎ
 - ห้าม push ตรงเข้า `main` → เปิด PR เสมอ · merge แบบ squash เท่านั้น · branch ที่ merge แล้วลบอัตโนมัติ
