@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  secret-scan:
+    uses: devsiam-com/.github/.github/workflows/reusable-secret-scan.yml@main
+
+  validate:
+    name: Validate Docker Compose
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: Prepare env
+        run: |
+          printf 'PATH_CONFIG=/tmp/config\nPATH_CACHE=/tmp/cache\nPATH_MEDIA=/tmp/media\nUID=1000\nGID=1000\nPORT=8096\n' > .env
+      - name: docker compose config
+        run: docker compose config -q
